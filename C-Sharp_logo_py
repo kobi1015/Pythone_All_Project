@@ -1,0 +1,108 @@
+from turtle import *
+from math import sin,radians,sqrt
+
+title('CSharp Logo')
+setup(500, 550)
+shape('turtle')
+speed('slowest')
+
+C1 = '#953DAC'
+C2 = '#68217A'
+C3 = '#822C98'
+R = 250
+F = 40 # fillet
+hy = F/sin(radians(60))
+aj = sqrt(hy*hy-F*F)
+L = R - 2*aj
+fR = R-(hy-F)
+
+def half():
+    begin_fill()
+    fd(fR)
+    lt(90)
+    circle(F, 30)
+    fd(L)
+    circle(F, 60)
+    fd(L)
+    circle(F, 60)
+    fd(L)
+    circle(F, 30)
+    lt(90)
+    fd(fR)
+    end_fill()
+
+def small():
+    pensize(1)
+    color('orange')
+    seth(-30)
+    begin_fill()
+    fd(fR)
+    lt(90)
+    circle(F, 30)
+    fd(L)
+    circle(F, 30)
+    lt(90)
+    fd(fR)
+    color(C3)
+    end_fill()
+    seth(0)
+
+def hbar():
+    seth(0)
+    down()
+    begin_fill()
+    fd(70)
+    rt(90)
+    fd(13)
+    rt(90)
+    fd(70)
+    rt(90)
+    fd(13)
+    end_fill()
+    up()
+
+def vbar():
+    seth(0)
+    down()
+    begin_fill()
+    fd(15)
+    rt(100.7)
+    fd(86.5)
+    rt(79.3)
+    fd(15)
+    rt(100.7)
+    fd(86.5)
+    end_fill()
+    up()
+
+color(C1)
+lt(30)
+half()
+color(C2)
+lt(180)
+half()
+seth(0)
+up()
+pencolor('white')
+pensize(74)
+fd(111)
+lt(90)
+down()
+circle(111)
+up()
+lt(90)
+fd(111)
+small()
+color('white')
+up()
+goto(113,30)
+hbar()
+goto(113-4,-3)
+hbar()
+goto(130, 49)
+vbar()
+goto(130+32,49)
+vbar()
+
+hideturtle()
+done()
