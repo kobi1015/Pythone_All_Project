@@ -1,0 +1,43 @@
+from turtle import *
+
+setup(550,550)
+
+def leaf(pos,ang):
+    color('black')
+    up()
+    goto(pos)
+    seth(ang-41)
+    down()
+    begin_fill()
+    circle(257.4,82.1)
+    lt(98)
+    circle(257.6,82)
+    end_fill()
+
+def bar(y):
+    up()
+    color('white')
+    goto(-240,y)
+    seth(0)
+    begin_fill()
+    fd(480)
+    rt(90)
+    fd(18)
+    rt(90)
+    fd(480)
+    rt(90)
+    fd(18)
+    end_fill()
+
+leaf((0,-68),90)
+leaf((35,-64),50)
+leaf((-35,-64),130)
+y=67
+for i in range(3):
+    bar(y)
+    y-=36.5
+fnt=('Century Gothic',115,'bold')
+color('black')
+goto(0,-245)
+write('adidas',font=fnt,align='center')
+done()
